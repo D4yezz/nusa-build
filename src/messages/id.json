@@ -1,0 +1,14 @@
+{
+  "Navbar": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "services": "Layanan",
+    "projects": "Proyek",
+    "careers": "Karier",
+    "blog": "Blog & Berita"
+  },
+  "Home": {
+    "greeting": "Halo dunia",
+    "description": "Ini hanya sebuah deskripsi"
+  }
+}

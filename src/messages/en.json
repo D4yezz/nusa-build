@@ -1,0 +1,14 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "projects": "Projects",
+    "careers": "Careers",
+    "blog": "Blog & News"
+  },
+  "Home": {
+    "greeting": "Hello World",
+    "description": "This is a description"
+  }
+}
