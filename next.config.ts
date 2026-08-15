@@ -5,6 +5,15 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
+  allowedDevOrigins: ["192.168.0.102"],
 };
 
 export default withNextIntl(nextConfig);
