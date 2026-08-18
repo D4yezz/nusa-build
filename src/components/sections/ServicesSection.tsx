@@ -119,23 +119,21 @@ export default function ServicesSection() {
             </h3>
           </div>
 
-          <div className="relative z-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="relative z-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5 ">
             {steps.map((step, idx) => (
               <div
                 key={idx}
-                className="flex flex-col justify-between p-5 border rounded-2xl bg-blue-100/40 border-white/50 backdrop-blur-sm"
+                className={`${idx === steps.length - 1 && "sm:col-span-2 col-span-1 lg:col-span-1"} flex flex-col justify-between p-5 border rounded-2xl bg-blue-100/40 border-white/50 backdrop-blur-sm`}
               >
-                <div>
-                  <span className="block mb-2 text-3xl font-extrabold text-white font-jakarta-sans">
-                    {step.num}
-                  </span>
-                  <h4 className="mb-2 text-base font-bold text-white font-jakarta-sans">
-                    {step.title}
-                  </h4>
-                  <p className="text-xs leading-relaxed text-white font-inter /70">
-                    {step.desc}
-                  </p>
-                </div>
+                <span className="block mb-2 text-3xl font-extrabold text-white font-jakarta-sans">
+                  {step.num}
+                </span>
+                <h4 className="mb-2 text-base font-bold text-white font-jakarta-sans">
+                  {step.title}
+                </h4>
+                <p className="text-xs leading-relaxed text-white font-inter">
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
