@@ -45,29 +45,26 @@ export default function HeroSection() {
           <div
             className={`${isDekstop && "hero-card"} relative bottom-0 left-0 z-10 lg:w-[60%] w-full h-fit`}
           >
-            <div className="flex flex-col items-center">
-              <div className="flex flex-col items-start">
-                <h1 className="font-jakarta-sans relative lg:text-6xl text-3xl z-20 font-extrabold text-blue-950 dark:text-white leading-[1.15] tracking-tight lg:px-4 px-4 lg:pt-8 pt-6 lg:pl-8 rounded-tr-3xl lg:max-w-[85%] text-balance lg:text-left text-center">
-                  <span className="relative z-10">
-                    {t("titlePrefix")}{" "}
-                    <span className="text-orange-500">
-                      {t("titleHighlight")}
-                    </span>{" "}
-                    {t("titleSuffix")}
-                  </span>
-                  {isDekstop && (
-                    <div className="absolute inset-0 z-0 w-full h-full">
-                      <div className="relative top-0 left-0 w-[98%] h-3/5 bg-white dark:bg-background rounded-tr-3xl convert-rounded"></div>
-                      <div className="relative left-0 w-[108%] h-2/5 bg-white dark:bg-background rounded-tr-3xl convert-rounded"></div>
-                    </div>
-                  )}
-                </h1>
+            <div className="flex flex-col items-start">
+              <h1 className="font-jakarta-sans relative lg:text-6xl text-3xl z-20 font-extrabold text-blue-950 dark:text-white leading-[1.15] tracking-tight lg:px-4 px-4 lg:pt-8 lg:pb-2 pt-6 lg:pl-8 rounded-tr-3xl lg:max-w-[85%] text-balance lg:text-left text-center">
+                <span className="relative z-10">
+                  {t("titlePrefix")}{" "}
+                  <span className="text-orange-500">{t("titleHighlight")}</span>{" "}
+                  {t("titleSuffix")}
+                </span>
+                {isDekstop && (
+                  <div className="absolute inset-0 z-0 w-full h-full">
+                    <div className="relative top-0 left-0 w-[98%] h-3/5 bg-white dark:bg-background rounded-tr-3xl convert-rounded"></div>
+                    <div className="relative left-0 w-[108%] h-2/5 bg-white dark:bg-background rounded-tr-3xl convert-rounded"></div>
+                  </div>
+                )}
+              </h1>
 
-                <p className="relative z-20 px-4 py-4 text-sm text-center lg:pl-8 lg:pb-10 text-balance lg:text-left font-inter lg:text-xl text-blue-900/90 dark:text-blue-200/80 lg:bg-white lg:dark:bg-background rounded-tr-3xl">
-                  {t("subtitle")}
-                </p>
-              </div>
+              <p className="relative w-full z-20 px-4 py-4 text-sm text-center lg:pl-8 lg:pb-10 text-balance lg:text-left font-inter lg:text-xl text-blue-900/90 dark:text-blue-200/80 lg:bg-white lg:dark:bg-background rounded-tr-3xl">
+                {t("subtitle")}
+              </p>
             </div>
+            <div className="bg-background w-[90%] h-50 absolute bottom-0 left-0"></div>
           </div>
           <div className="flex items-center justify-center gap-4 pb-4 w-fit h-fit lg:p-5 ">
             <Link
@@ -84,7 +81,7 @@ export default function HeroSection() {
               href="https://wa.me/6281234567890?text=Halo%20NusaBuild%20Studio,%20saya%20tertarik%20untuk%20berkonsultasi"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-6 lg:h-14 h-11 text-sm font-bold transition-all border rounded-full bg-blue-50 dark:bg-blue-950/80 hover:bg-blue-100 dark:hover:bg-blue-900/60 text-blue-950 dark:text-white font-jakarta-sans border-blue-200/70 dark:border-blue-900/60"
+              className="flex items-center justify-center gap-2 px-6 lg:h-14 h-11 text-sm font-bold transition-all border rounded-full bg-blue-50/80 dark:bg-blue-950/80 hover:bg-blue-100 dark:hover:bg-blue-900/60 text-blue-950 dark:text-white font-jakarta-sans border-blue-200/70 dark:border-blue-900/60"
             >
               <span>{t("ctaWa")}</span>
             </a>

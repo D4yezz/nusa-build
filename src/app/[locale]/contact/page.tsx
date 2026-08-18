@@ -5,7 +5,7 @@ import FloatingWhatsApp from "@/components/common/FloatingWhatsApp";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-white dark:bg-[#070f1e] text-blue-950 dark:text-white pt-16">
+    <main className="min-h-screen bg-white dark:bg-dark-blue text-blue-950 dark:text-white pt-16">
       <Navbar />
       <ContactSection />
       <Footer />

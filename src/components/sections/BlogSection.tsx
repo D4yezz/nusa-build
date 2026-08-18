@@ -14,23 +14,34 @@ export default function BlogSection() {
 
   const shareOnWa = (title: string) => {
     const url = window.location.href;
-    window.open(`https://wa.me/?text=${encodeURIComponent(`${title} - ${url}`)}`, "_blank");
+    window.open(
+      `https://wa.me/?text=${encodeURIComponent(`${title} - ${url}`)}`,
+      "_blank",
+    );
   };
 
   const shareOnLinkedIn = (title: string) => {
     const url = window.location.href;
-    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, "_blank");
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+      "_blank",
+    );
   };
 
   const shareOnTwitter = (title: string) => {
     const url = window.location.href;
-    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`, "_blank");
+    window.open(
+      `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
+      "_blank",
+    );
   };
 
   return (
-    <section id="blog" className="py-20 lg:py-28 bg-blue-50/40 dark:bg-blue-950/20 relative">
+    <section
+      id="blog"
+      className="py-20 lg:py-28 bg-blue-50/40 dark:bg-blue-950/20 relative"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-3.5 py-1 rounded-full bg-orange-500/10 text-orange-500 font-jakarta-sans text-xs font-bold tracking-wider uppercase mb-3">
@@ -103,7 +114,6 @@ export default function BlogSection() {
             </motion.div>
           ))}
         </div>
-
       </div>
 
       {/* Article Detail Pop-up Modal */}
@@ -114,7 +124,7 @@ export default function BlogSection() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white dark:bg-[#070f1e] border border-blue-100 dark:border-blue-900/80 rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
+              className="bg-white dark:bg-dark-blue border border-blue-100 dark:border-blue-900/80 rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
             >
               <button
                 onClick={() => setSelectedArticle(null)}
@@ -151,7 +161,9 @@ export default function BlogSection() {
 
                 <div className="text-right text-xs font-semibold text-blue-900/60 dark:text-blue-300/60">
                   <div>{selectedArticle.date}</div>
-                  <div className="text-orange-500">{selectedArticle.readTime} {t("readTime")}</div>
+                  <div className="text-orange-500">
+                    {selectedArticle.readTime} {t("readTime")}
+                  </div>
                 </div>
               </div>
 
@@ -178,14 +190,18 @@ export default function BlogSection() {
                   </button>
 
                   <button
-                    onClick={() => shareOnLinkedIn(selectedArticle.title[locale])}
+                    onClick={() =>
+                      shareOnLinkedIn(selectedArticle.title[locale])
+                    }
                     className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-jakarta-sans font-bold text-xs flex items-center gap-1.5 shadow-sm"
                   >
                     <span>LinkedIn</span>
                   </button>
 
                   <button
-                    onClick={() => shareOnTwitter(selectedArticle.title[locale])}
+                    onClick={() =>
+                      shareOnTwitter(selectedArticle.title[locale])
+                    }
                     className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-black text-white font-jakarta-sans font-bold text-xs flex items-center gap-1.5 shadow-sm"
                   >
                     <span>X (Twitter)</span>

@@ -1,5 +1,3 @@
-import { Building2, Compass, Wrench, ShieldCheck } from "lucide-react";
-
 export interface ServiceItem {
   id: string;
   iconName: "Building2" | "Compass" | "Wrench" | "ShieldCheck";

@@ -1,17 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { projectsData, ProjectItem } from "@/data/projects";
-import { MapPin, Calendar, Maximize2, Clock, CheckCircle2, ArrowUpRight, X } from "lucide-react";
+import { MapPin, Maximize2, CheckCircle2, ArrowUpRight, X } from "lucide-react";
+import Image from "next/image";
 
 export default function PortfolioSection() {
   const t = useTranslations("Portfolio");
   const locale = useLocale() as "id" | "en";
 
   const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(
+    null,
+  );
 
   const categories = [
     { key: "all", label: t("all") },
@@ -25,25 +28,32 @@ export default function PortfolioSection() {
       ? projectsData
       : projectsData.filter((p) => p.category === activeCategory);
 
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  });
+
   return (
-    <section id="portfolio" className="py-20 lg:py-28 bg-blue-50/40 dark:bg-blue-950/20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+    <section
+      id="portfolio"
+      className="relative py-20 lg:py-28 bg-blue-50/40 dark:bg-blue-950/20"
+    >
+      <div className="px-5 mx-auto sm:px-18 lg:px-22">
+        <div className="max-w-3xl mx-auto mb-12 text-center">
           <span className="inline-block px-3.5 py-1 rounded-full bg-orange-500/10 text-orange-500 font-jakarta-sans text-xs font-bold tracking-wider uppercase mb-3">
             {t("tag")}
           </span>
-          <h2 className="font-jakarta-sans text-3xl sm:text-4xl font-extrabold text-blue-950 dark:text-white tracking-tight mb-4">
+          <h2 className="mb-4 text-3xl font-extrabold tracking-tight font-jakarta-sans sm:text-4xl text-blue-950 dark:text-white">
             {t("title")}
           </h2>
-          <p className="font-inter text-base text-blue-900/80 dark:text-blue-200/80">
+          <p className="text-base font-inter text-blue-900/80 dark:text-blue-200/80">
             {t("subtitle")}
           </p>
         </div>
-
-        {/* Filter Tabs (Framer Motion AnimatePresence) */}
-        <div className="flex flex-wrap justify-center items-center gap-2 mb-14">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-14">
           {categories.map((cat) => {
             const isActive = activeCategory === cat.key;
             return (
@@ -62,8 +72,10 @@ export default function PortfolioSection() {
           })}
         </div>
 
-        {/* Projects Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          layout
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           <AnimatePresence>
             {filteredProjects.map((project) => (
               <motion.div
@@ -73,39 +85,36 @@ export default function PortfolioSection() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
                 key={project.id}
-                className="group rounded-3xl overflow-hidden bg-white dark:bg-blue-950/70 border border-blue-100 dark:border-blue-900/60 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+                className="flex flex-col overflow-hidden transition-all duration-300 bg-white border border-blue-100 shadow-sm group rounded-3xl dark:bg-blue-950/70 dark:border-blue-900/60 hover:shadow-xl"
               >
-                {/* Image Container with Hover Zoom */}
                 <div className="relative h-64 overflow-hidden bg-blue-950">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    className="object-cover w-full h-full transition-transform duration-700 transform group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                  <div className="absolute inset-0 transition-opacity bg-linear-to-t from-blue-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-80" />
 
-                  {/* Category Pill */}
                   <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 dark:bg-blue-950/90 backdrop-blur-md font-jakarta-sans text-[11px] font-bold text-orange-500 uppercase tracking-wider shadow-sm">
                     {project.categoryName[locale]}
                   </span>
 
-                  {/* Year Tag */}
                   <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-blue-950/80 backdrop-blur-md font-jakarta-sans text-[11px] font-bold text-white tracking-wider">
                     {project.year}
                   </span>
                 </div>
 
-                {/* Body Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
+                <div className="flex flex-col justify-between flex-1 p-6">
                   <div>
-                    <h3 className="font-jakarta-sans text-xl font-bold text-blue-950 dark:text-white mb-2 group-hover:text-orange-500 transition-colors">
+                    <h3 className="mb-2 text-xl font-bold transition-colors font-jakarta-sans text-blue-950 dark:text-white group-hover:text-orange-500">
                       {project.title}
                     </h3>
-                    <p className="font-inter text-xs text-blue-900/70 dark:text-blue-200/70 line-clamp-2 leading-relaxed mb-4">
+                    <p className="mb-4 text-xs leading-relaxed font-inter text-blue-900/70 dark:text-blue-200/70 line-clamp-2">
                       {project.description[locale]}
                     </p>
 
-                    <div className="flex items-center gap-4 text-xs font-semibold text-blue-900/60 dark:text-blue-300/60 mb-6">
+                    <div className="flex items-center gap-4 mb-6 text-xs font-semibold text-blue-900/60 dark:text-blue-300/60">
                       <span className="flex items-center gap-1">
                         <MapPin className="w-3.5 h-3.5 text-orange-500" />
                         {project.location.split(",")[0]}
@@ -119,7 +128,7 @@ export default function PortfolioSection() {
 
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="w-full py-3 rounded-2xl bg-blue-50 dark:bg-blue-900/40 hover:bg-orange-500 hover:text-white text-blue-950 dark:text-white font-jakarta-sans font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300"
+                    className="flex items-center justify-center w-full gap-2 py-3 text-xs font-bold tracking-wider uppercase transition-all duration-300 rounded-2xl bg-blue-50 dark:bg-blue-900/40 hover:bg-orange-500 hover:text-white text-blue-950 dark:text-white font-jakarta-sans"
                   >
                     <span>{t("viewDetail")}</span>
                     <ArrowUpRight className="w-4 h-4" />
@@ -129,18 +138,19 @@ export default function PortfolioSection() {
             ))}
           </AnimatePresence>
         </motion.div>
-
       </div>
 
-      {/* Project Detail Pop-up Modal */}
       <AnimatePresence>
         {selectedProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-blue-950/80 backdrop-blur-md">
+          <div
+            onClick={() => setSelectedProject(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-blue-950/80 backdrop-blur-md"
+          >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white dark:bg-[#070f1e] border border-blue-100 dark:border-blue-900/80 rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
+              className="bg-white dark:bg-dark-blue border border-blue-100 dark:border-blue-900/80 rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
             >
               <button
                 onClick={() => setSelectedProject(null)}
@@ -149,33 +159,32 @@ export default function PortfolioSection() {
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Main Photo & Gallery */}
-              <div className="rounded-2xl overflow-hidden mb-6 h-64 sm:h-80 bg-blue-950 relative">
-                <img
+              <div className="relative h-64 mb-6 overflow-hidden rounded-2xl sm:h-80 bg-blue-950">
+                <Image
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover w-full h-full"
                 />
-                <span className="absolute bottom-4 left-4 px-3 py-1 rounded-full bg-orange-500 text-white font-jakarta-sans text-xs font-bold uppercase tracking-wider">
+                <span className="absolute px-3 py-1 text-xs font-bold tracking-wider text-white uppercase bg-orange-500 rounded-full bottom-4 left-4 font-jakarta-sans">
                   {selectedProject.categoryName[locale]}
                 </span>
               </div>
 
-              <h3 className="font-jakarta-sans text-2xl sm:text-3xl font-extrabold text-blue-950 dark:text-white mb-4">
+              <h3 className="mb-4 text-2xl font-extrabold font-jakarta-sans sm:text-3xl text-blue-950 dark:text-white">
                 {selectedProject.title}
               </h3>
 
-              <p className="font-inter text-sm text-blue-900/80 dark:text-blue-200/80 leading-relaxed mb-6">
+              <p className="mb-6 text-sm leading-relaxed font-inter text-blue-900/80 dark:text-blue-200/80">
                 {selectedProject.description[locale]}
               </p>
 
-              {/* Specs Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-2xl bg-blue-50/50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 mb-6">
+              <div className="grid grid-cols-2 gap-4 p-4 mb-6 border border-blue-100 sm:grid-cols-4 rounded-2xl bg-blue-50/50 dark:bg-blue-950/60 dark:border-blue-900/60">
                 <div>
                   <span className="text-[11px] font-semibold text-blue-900/60 dark:text-blue-300/60 uppercase block">
                     {t("modalLocation")}
                   </span>
-                  <span className="font-jakarta-sans text-xs font-bold text-blue-950 dark:text-white">
+                  <span className="text-xs font-bold font-jakarta-sans text-blue-950 dark:text-white">
                     {selectedProject.location}
                   </span>
                 </div>
@@ -183,7 +192,7 @@ export default function PortfolioSection() {
                   <span className="text-[11px] font-semibold text-blue-900/60 dark:text-blue-300/60 uppercase block">
                     {t("modalYear")}
                   </span>
-                  <span className="font-jakarta-sans text-xs font-bold text-blue-950 dark:text-white">
+                  <span className="text-xs font-bold font-jakarta-sans text-blue-950 dark:text-white">
                     {selectedProject.year}
                   </span>
                 </div>
@@ -191,7 +200,7 @@ export default function PortfolioSection() {
                   <span className="text-[11px] font-semibold text-blue-900/60 dark:text-blue-300/60 uppercase block">
                     {t("modalArea")}
                   </span>
-                  <span className="font-jakarta-sans text-xs font-bold text-blue-950 dark:text-white">
+                  <span className="text-xs font-bold font-jakarta-sans text-blue-950 dark:text-white">
                     {selectedProject.area}
                   </span>
                 </div>
@@ -199,21 +208,22 @@ export default function PortfolioSection() {
                   <span className="text-[11px] font-semibold text-blue-900/60 dark:text-blue-300/60 uppercase block">
                     {t("modalDuration")}
                   </span>
-                  <span className="font-jakarta-sans text-xs font-bold text-blue-950 dark:text-white">
+                  <span className="text-xs font-bold font-jakarta-sans text-blue-950 dark:text-white">
                     {selectedProject.duration}
                   </span>
                 </div>
               </div>
-
-              {/* Technical Specifications */}
               <div className="mb-8">
-                <h4 className="font-jakarta-sans text-sm font-bold text-blue-950 dark:text-white uppercase tracking-wider mb-3">
+                <h4 className="mb-3 text-sm font-bold tracking-wider uppercase font-jakarta-sans text-blue-950 dark:text-white">
                   {t("modalSpecs")}
                 </h4>
                 <ul className="space-y-2">
                   {selectedProject.specs.map((sp, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-xs font-semibold text-blue-900 dark:text-blue-100">
-                      <CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0" />
+                    <li
+                      key={idx}
+                      className="flex items-center gap-2 text-xs font-semibold text-blue-900 dark:text-blue-100"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0" />
                       <span>{sp[locale]}</span>
                     </li>
                   ))}

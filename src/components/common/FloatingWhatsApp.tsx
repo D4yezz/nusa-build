@@ -21,7 +21,7 @@ export default function FloatingWhatsApp() {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="mb-4 w-80 sm:w-96 rounded-3xl bg-white dark:bg-[#070f1e] border border-blue-100 dark:border-blue-900/80 shadow-2xl overflow-hidden"
+            className="mb-4 w-80 sm:w-96 rounded-3xl bg-white dark:bg-dark-blue border border-blue-100 dark:border-blue-900/80 shadow-2xl overflow-hidden"
           >
             {/* Header */}
             <div className="p-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white flex items-center justify-between">
@@ -57,7 +57,7 @@ export default function FloatingWhatsApp() {
             </div>
 
             {/* Footer Action */}
-            <div className="p-4 bg-white dark:bg-[#070f1e] border-t border-blue-100 dark:border-blue-900/60">
+            <div className="p-4 bg-white dark:bg-dark-blue border-t border-blue-100 dark:border-blue-900/60">
               <a
                 href={directWaUrl}
                 target="_blank"

@@ -4,7 +4,17 @@ import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { careersData, JobPosition } from "@/data/careers";
-import { MapPin, Briefcase, Building, CheckCircle2, Mail, Phone, Copy, Check, X } from "lucide-react";
+import {
+  MapPin,
+  Briefcase,
+  Building,
+  CheckCircle2,
+  Mail,
+  Phone,
+  Copy,
+  Check,
+  X,
+} from "lucide-react";
 
 export default function CareersSection() {
   const t = useTranslations("Careers");
@@ -22,7 +32,6 @@ export default function CareersSection() {
   return (
     <section id="careers" className="py-20 lg:py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-3.5 py-1 rounded-full bg-orange-500/10 text-orange-500 font-jakarta-sans text-xs font-bold tracking-wider uppercase mb-3">
@@ -81,7 +90,10 @@ export default function CareersSection() {
                 </h4>
                 <ul className="space-y-2 mb-8">
                   {job.requirements[locale].map((req, rIdx) => (
-                    <li key={rIdx} className="flex items-start gap-2 text-xs text-blue-900/80 dark:text-blue-200/80">
+                    <li
+                      key={rIdx}
+                      className="flex items-start gap-2 text-xs text-blue-900/80 dark:text-blue-200/80"
+                    >
                       <CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
                       <span>{req}</span>
                     </li>
@@ -98,7 +110,6 @@ export default function CareersSection() {
             </motion.div>
           ))}
         </div>
-
       </div>
 
       {/* Apply Modal */}
@@ -109,7 +120,7 @@ export default function CareersSection() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white dark:bg-[#070f1e] border border-blue-100 dark:border-blue-900/80 rounded-3xl p-6 sm:p-8 max-w-xl w-full shadow-2xl relative"
+              className="bg-white dark:bg-dark-blue border border-blue-100 dark:border-blue-900/80 rounded-3xl p-6 sm:p-8 max-w-xl w-full shadow-2xl relative"
             >
               <button
                 onClick={() => setSelectedJob(null)}
