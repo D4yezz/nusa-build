@@ -83,7 +83,7 @@ export default function Navbar() {
             {navLinks.map((link) => {
               const isActive =
                 pathname === link.href ||
-                (link.href !== "/" && pathname.startsWith(link.href));
+                (link.href !== "/" && pathname === link.href.replace("/", ""));
               return (
                 <Link
                   key={link.href}
