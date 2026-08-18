@@ -66,7 +66,13 @@
     "val3": "Presisi",
     "val3Desc": "Akurasi tinggi dari tahap perencanaan hingga detail finishing.",
     "val4": "Keselamatan",
-    "val4Desc": "Prioritas utama pada keselamatan kerja dan ketahanan struktur."
+    "val4Desc": "Prioritas utama pada keselamatan kerja dan ketahanan struktur.",
+    "quickHighlights": {
+      "highlights1": "Sertikasi ISO 9001:2015",
+      "highlights2": "Tim Arsitek IAI & Insinyur PII",
+      "highlights3": "Garansi Pemeliharaan Proyek",
+      "highlights4": "Pengawasan K3LH Ketat"
+    }
   },
   "Services": {
     "tag": "LAYANAN UTAMA",

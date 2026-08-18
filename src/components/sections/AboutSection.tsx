@@ -2,99 +2,109 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Target, Compass, ShieldCheck, Zap, Award, Check } from "lucide-react";
+import { Check } from "lucide-react";
+import Image from "next/image";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  AiInnovationIcon,
+  Award05Icon,
+  City01Icon,
+  GoalIcon,
+  LaborIcon,
+  MoneySecurityIcon,
+  Route01Icon,
+} from "@hugeicons/core-free-icons";
 
 export default function AboutSection() {
   const t = useTranslations("About");
 
   const values = [
-    { title: t("val1"), desc: t("val1Desc"), icon: ShieldCheck },
-    { title: t("val2"), desc: t("val2Desc"), icon: Zap },
-    { title: t("val3"), desc: t("val3Desc"), icon: Compass },
-    { title: t("val4"), desc: t("val4Desc"), icon: Target },
+    { title: t("val1"), desc: t("val1Desc"), icon: MoneySecurityIcon },
+    { title: t("val2"), desc: t("val2Desc"), icon: AiInnovationIcon },
+    { title: t("val3"), desc: t("val3Desc"), icon: Route01Icon },
+    { title: t("val4"), desc: t("val4Desc"), icon: LaborIcon },
   ];
 
   return (
-    <section id="about" className="py-20 lg:py-28 bg-blue-50/40 dark:bg-blue-950/20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Main About Intro Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-20">
-          
-          {/* Left Image Stack */}
+    <section
+      id="about"
+      className="relative py-20 overflow-hidden lg:py-28 bg-blue-50/40 dark:bg-blue-950/20"
+    >
+      <div className="px-5 mx-auto sm:px-18 lg:px-22">
+        <div className="grid items-center grid-cols-1 gap-12 mb-20 lg:grid-cols-12 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-6 relative"
+            className="relative lg:col-span-6"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-blue-100 dark:border-blue-900/60">
-              <img
+            <div className="relative w-full overflow-hidden border border-blue-100 shadow-2xl rounded-3xl dark:border-blue-900/60 h-120">
+              <Image
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80"
                 alt="Architect team discussing blueprints"
-                className="w-full h-[400px] sm:h-[480px] object-cover"
+                className="object-cover"
+                fill
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-blue-950/60 via-transparent to-transparent" />
             </div>
 
-            {/* Floating Experience Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="absolute -bottom-6 -right-4 sm:right-6 p-6 rounded-2xl bg-orange-500 text-white shadow-xl max-w-[220px]"
+              className="absolute p-6 text-white bg-orange-500 shadow-xl -bottom-6 right-4 lg:right-6 rounded-2xl max-w-55"
             >
-              <Award className="w-8 h-8 mb-2" />
-              <span className="font-jakarta-sans text-3xl font-extrabold block">15+</span>
-              <span className="font-inter text-xs font-semibold uppercase tracking-wider block opacity-90">
+              <HugeiconsIcon icon={Award05Icon} size={40} strokeWidth={1.5} />
+              <span className="font-jakarta-sans text-3xl font-extrabold block mt-1.5">
+                15+
+              </span>
+              <span className="block text-xs font-semibold tracking-wider uppercase font-inter opacity-90">
                 Tahun Pengalaman Profesional
               </span>
             </motion.div>
           </motion.div>
 
-          {/* Right Text Content */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-6 flex flex-col items-start"
+            className="flex flex-col items-start lg:col-span-6"
           >
             <span className="inline-block px-3.5 py-1 rounded-full bg-orange-500/10 text-orange-500 font-jakarta-sans text-xs font-bold tracking-wider uppercase mb-3">
               {t("tag")}
             </span>
-            
-            <h2 className="font-jakarta-sans text-3xl sm:text-4xl font-extrabold text-blue-950 dark:text-white tracking-tight mb-6 leading-tight">
+
+            <h2 className="mb-6 text-3xl font-extrabold leading-tight tracking-tight font-jakarta-sans sm:text-4xl text-blue-950 dark:text-white">
               {t("title")}
             </h2>
 
-            <p className="font-inter text-base text-blue-950 dark:text-blue-100 font-semibold mb-4">
+            <p className="mb-4 text-base font-semibold font-inter text-blue-950 dark:text-blue-100">
               {t("subtitle")}
             </p>
 
-            <p className="font-inter text-sm text-blue-900/70 dark:text-blue-200/70 leading-relaxed mb-4">
+            <p className="mb-4 text-sm leading-relaxed font-inter text-blue-900/70 dark:text-blue-200/70">
               {t("description1")}
             </p>
 
-            <p className="font-inter text-sm text-blue-900/70 dark:text-blue-200/70 leading-relaxed mb-8">
+            <p className="mb-8 text-sm leading-relaxed font-inter text-blue-900/70 dark:text-blue-200/70">
               {t("description2")}
             </p>
 
-            {/* Quick Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+            <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-2">
               {[
-                "ISO 9001:2015 Certified",
-                "Tim Arsitek IAI & Insinyur PII",
-                "Garansi Pemeliharaan Proyek",
-                "Pengawasan K3LH Ketat",
+                t("quickHighlights.highlights1"),
+                t("quickHighlights.highlights2"),
+                t("quickHighlights.highlights3"),
+                t("quickHighlights.highlights4"),
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-full bg-orange-500/10 text-orange-500 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+                  <div className="flex items-center justify-center w-5 h-5 text-orange-500 rounded-full bg-orange-500/10 shrink-0">
+                    <Check className="w-3.5 h-3.5 stroke-3" />
                   </div>
-                  <span className="font-jakarta-sans text-xs font-bold text-blue-950 dark:text-white">
+                  <span className="text-xs font-bold font-jakarta-sans text-blue-950 dark:text-white">
                     {item}
                   </span>
                 </div>
@@ -103,21 +113,20 @@ export default function AboutSection() {
           </motion.div>
         </div>
 
-        {/* Vision & Mission Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 gap-8 mb-16 md:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-white dark:bg-blue-950/70 border border-blue-100 dark:border-blue-900/60 shadow-sm"
+            className="p-8 bg-white border border-blue-100 shadow-sm rounded-3xl dark:bg-blue-950/70 dark:border-blue-900/60"
           >
-            <div className="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-5">
-              <Compass className="w-6 h-6" />
+            <div className="flex items-center justify-center w-12 h-12 mb-5 text-blue-600 rounded-2xl bg-blue-500/10 dark:text-blue-400">
+              <HugeiconsIcon icon={City01Icon} size={24} />
             </div>
-            <h3 className="font-jakarta-sans text-xl font-bold text-blue-950 dark:text-white mb-3">
+            <h3 className="mb-3 text-xl font-bold font-jakarta-sans text-blue-950 dark:text-white">
               {t("visionTitle")}
             </h3>
-            <p className="font-inter text-sm text-blue-900/70 dark:text-blue-200/70 leading-relaxed">
+            <p className="text-sm leading-relaxed font-inter text-blue-900/70 dark:text-blue-200/70">
               {t("visionDesc")}
             </p>
           </motion.div>
@@ -127,39 +136,41 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="p-8 rounded-3xl bg-white dark:bg-blue-950/70 border border-blue-100 dark:border-blue-900/60 shadow-sm"
+            className="p-8 bg-white border border-blue-100 shadow-sm rounded-3xl dark:bg-blue-950/70 dark:border-blue-900/60"
           >
-            <div className="w-12 h-12 rounded-2xl bg-orange-500/10 text-orange-500 flex items-center justify-center mb-5">
-              <Target className="w-6 h-6" />
+            <div className="flex items-center justify-center w-12 h-12 mb-5 text-orange-500 rounded-2xl bg-orange-500/10">
+              <HugeiconsIcon icon={GoalIcon} size={24} />
             </div>
-            <h3 className="font-jakarta-sans text-xl font-bold text-blue-950 dark:text-white mb-3">
+            <h3 className="mb-3 text-xl font-bold font-jakarta-sans text-blue-950 dark:text-white">
               {t("missionTitle")}
             </h3>
-            <p className="font-inter text-sm text-blue-900/70 dark:text-blue-200/70 leading-relaxed">
+            <p className="text-sm leading-relaxed font-inter text-blue-900/70 dark:text-blue-200/70">
               {t("missionDesc")}
             </p>
           </motion.div>
         </div>
 
-        {/* Core Values Section */}
         <div>
-          <h3 className="font-jakarta-sans text-2xl font-bold text-blue-950 dark:text-white text-center mb-10">
+          <h3 className="mb-10 text-2xl font-bold text-center font-jakarta-sans text-blue-950 dark:text-white">
             {t("valuesTitle")}
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v, i) => {
-              const IconComp = v.icon;
               return (
                 <div
                   key={i}
-                  className="p-6 rounded-2xl bg-white dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 shadow-sm"
+                  className="p-6 bg-white border border-blue-100 shadow-sm rounded-2xl dark:bg-blue-950/60 dark:border-blue-900/60"
                 >
-                  <IconComp className="w-6 h-6 text-orange-500 mb-3" />
-                  <h4 className="font-jakarta-sans text-base font-bold text-blue-950 dark:text-white mb-2">
+                  <HugeiconsIcon
+                    icon={v.icon}
+                    size={30}
+                    className="mb-3 text-orange-500"
+                  />
+                  <h4 className="mb-2 text-base font-bold font-jakarta-sans text-blue-950 dark:text-white">
                     {v.title}
                   </h4>
-                  <p className="font-inter text-xs text-blue-900/70 dark:text-blue-200/70 leading-relaxed">
+                  <p className="text-xs leading-relaxed font-inter text-blue-900/70 dark:text-blue-200/70">
                     {v.desc}
                   </p>
                 </div>

@@ -66,7 +66,13 @@
     "val3": "Precision",
     "val3Desc": "Uncompromising accuracy from initial planning to finishing details.",
     "val4": "Safety",
-    "val4Desc": "Top priority on occupational safety and structural integrity."
+    "val4Desc": "Top priority on occupational safety and structural integrity.",
+    "quickHighlights": {
+      "highlights1": "ISO 9001:2015 Certified",
+      "highlights2": "Team of IAI Architects & PII Engineers",
+      "highlights3": "Project Maintenance Warranty",
+      "highlights4": "Strict Health, Safety, and Environmental Oversight"
+    }
   },
   "Services": {
     "tag": "PRIMARY SERVICES",
