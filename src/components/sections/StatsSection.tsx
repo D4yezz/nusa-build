@@ -3,6 +3,13 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Calendar, CheckCircle2, Clock, ThumbsUp } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  CalendarAnalysisIcon,
+  CalendarClockIcon,
+  CheckmarkCircle03Icon,
+  ThumbsUpIcon,
+} from "@hugeicons/core-free-icons";
 
 export default function StatsSection() {
   const t = useTranslations("Stats");
@@ -11,25 +18,29 @@ export default function StatsSection() {
     {
       value: "15+",
       label: t("years"),
-      icon: Calendar,
+      // icon: Calendar,
+      icon: CalendarAnalysisIcon,
       desc: "Track record sejak 2010",
     },
     {
       value: "250+",
       label: t("projects"),
-      icon: CheckCircle2,
+      icon: CheckmarkCircle03Icon,
+      // icon: CheckCircle2,
       desc: "Skala nasional & daerah",
     },
     {
       value: "100%",
       label: t("onTime"),
-      icon: Clock,
+      icon: CalendarClockIcon,
+      // icon: Clock,
       desc: "Manajemen tenggat ketat",
     },
     {
       value: "99%",
       label: t("satisfaction"),
-      icon: ThumbsUp,
+      icon: ThumbsUpIcon,
+      // icon: ThumbsUp,
       desc: "Rekomendasi klien positif",
     },
   ];
@@ -39,7 +50,7 @@ export default function StatsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((item, index) => {
-            const IconComp = item.icon;
+            // const IconComp = item.icon;
             return (
               <motion.div
                 key={index}
@@ -51,7 +62,8 @@ export default function StatsSection() {
               >
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 rounded-xl bg-orange-500/10 dark:bg-orange-500/20 flex items-center justify-center text-orange-500 group-hover:scale-110 transition-transform">
-                    <IconComp className="w-5 h-5 stroke-[2.2]" />
+                    {/* <IconComp className="w-5 h-5 stroke-[2.2]" /> */}
+                    <HugeiconsIcon icon={item.icon} size={20} />
                   </div>
                   <span className="font-jakarta-sans text-3xl sm:text-4xl font-extrabold text-blue-950 dark:text-white">
                     {item.value}

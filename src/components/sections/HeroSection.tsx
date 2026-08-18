@@ -31,7 +31,7 @@ export default function HeroSection() {
       <div className="relative w-full h-full overflow-hidden rounded-3xl">
         <Image
           src="/bg-home.jpg"
-          alt=""
+          alt="Hero background image"
           fill
           priority
           className="object-cover"

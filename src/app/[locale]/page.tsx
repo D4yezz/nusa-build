@@ -16,7 +16,7 @@ export default function Home() {
     <main className="min-h-screen bg-white dark:bg-dark-blue text-blue-950 dark:text-white transition-colors duration-300">
       <Navbar />
       <HeroSection />
-      <StatsSection />
+      {/* <StatsSection /> */}
       <FeaturesSection />
       <AboutSection />
       <ServicesSection />
