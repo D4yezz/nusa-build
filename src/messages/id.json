@@ -140,7 +140,7 @@
     "title": "Mari Diskusikan Proyek Impian Anda",
     "subtitle": "Tim konsultan teknis kami siap memberikan advis terbaik untuk rencana pembangunan Anda.",
     "officeAddress": "Alamat Kantor Utama",
-    "officeAddressVal": "Jl. Metro Pondok Indah No. 88, Kebayoran Lama, Jakarta Selatan 12310",
+    "officeAddressVal": "Jl. M.H. Thamrin, Kec. Ngawi, Kabupaten Ngawi, Jawa Timur 63211",
     "emailUs": "Email Resmi",
     "phoneUs": "Nomor Telepon / WA",
     "hoursUs": "Jam Operasional",
@@ -158,7 +158,9 @@
     "messagePlaceholder": "Jelaskan lokasi proyek, estimasi luas, dan rencana pembangunan Anda...",
     "submitBtn": "Kirim Pesan Konsultasi",
     "submitting": "Mengirim...",
-    "successMsg": "Pesan Anda berhasil dikirim! Tim kami akan menghubungi Anda dalam 1x24 jam."
+    "titleSuccess": "Pesan Berhasil Terkirim!",
+    "successMsg": "Pesan Anda berhasil dikirim! Tim kami akan menghubungi Anda dalam 1x24 jam.",
+    "btnSuccess": "Kirim Pesan Lain"
   },
   "WhatsApp": {
     "tooltip": "Chat dengan Tim Konsultan Kami",

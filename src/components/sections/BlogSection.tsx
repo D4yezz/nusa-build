@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { blogsData } from "@/data/blogs";
-import { Clock, Calendar, ArrowRight, X } from "lucide-react";
+import { Clock, Calendar, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,7 +16,7 @@ export default function BlogSection() {
       id="blog"
       className="relative py-20 lg:py-28 bg-blue-50/40 dark:bg-blue-950/20"
     >
-      <div className="px-5 mx-auto sm:px-16 lg:px-24">
+      <div className="px-4 mx-auto md:px-16 lg:px-24">
         <div className="max-w-3xl mx-auto mb-16 text-center">
           <span className="inline-block px-3.5 py-1 rounded-full bg-orange-500/10 text-orange-500 font-jakarta-sans text-xs font-bold tracking-wider uppercase mb-3">
             {t("tag")}
@@ -29,7 +29,7 @@ export default function BlogSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {blogsData.slice(0, 3).map((post, index) => (
             <motion.div
               key={post.id}

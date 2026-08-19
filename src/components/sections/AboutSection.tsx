@@ -155,12 +155,12 @@ export default function AboutSection() {
             {t("valuesTitle")}
           </h3>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-wrap md:gap-0 gap-4 justify-between">
             {values.map((v, i) => {
               return (
                 <div
                   key={i}
-                  className="p-6 bg-white border border-blue-100 shadow-sm rounded-2xl dark:bg-blue-950/60 dark:border-blue-900/60"
+                  className="p-6 md:w-[23%] w-[48%] lg:h-fit md:h-60 h-50 flex flex-col justify-center items-center bg-white border border-blue-100 shadow-sm md:nth-2:mt-24 md:nth-3:mt-24 rounded-2xl dark:bg-blue-950/60 dark:border-blue-900/60"
                 >
                   <HugeiconsIcon
                     icon={v.icon}
@@ -170,7 +170,7 @@ export default function AboutSection() {
                   <h4 className="mb-2 text-base font-bold font-jakarta-sans text-blue-950 dark:text-white">
                     {v.title}
                   </h4>
-                  <p className="text-xs leading-relaxed font-inter text-blue-900/70 dark:text-blue-200/70">
+                  <p className="text-xs lg:px-8 px-0 leading-relaxed font-inter text-blue-900/70 text-center dark:text-blue-200/70">
                     {v.desc}
                   </p>
                 </div>

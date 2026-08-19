@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Calendar, CheckCircle2, Clock, ThumbsUp } from "lucide-react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   CalendarAnalysisIcon,
@@ -18,7 +17,6 @@ export default function StatsSection() {
     {
       value: "15+",
       label: t("years"),
-      // icon: Calendar,
       icon: CalendarAnalysisIcon,
       desc: "Track record sejak 2010",
     },
@@ -26,31 +24,27 @@ export default function StatsSection() {
       value: "250+",
       label: t("projects"),
       icon: CheckmarkCircle03Icon,
-      // icon: CheckCircle2,
       desc: "Skala nasional & daerah",
     },
     {
       value: "100%",
       label: t("onTime"),
       icon: CalendarClockIcon,
-      // icon: Clock,
       desc: "Manajemen tenggat ketat",
     },
     {
       value: "99%",
       label: t("satisfaction"),
       icon: ThumbsUpIcon,
-      // icon: ThumbsUp,
       desc: "Rekomendasi klien positif",
     },
   ];
 
   return (
-    <section className="py-12 bg-blue-50/50 dark:bg-blue-950/30 border-y border-blue-100/60 dark:border-blue-900/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+    <section className="pb-12 pt-18 bg-background">
+      <div className="px-4 mx-auto lg:px-22">
+        <div className="flex flex-wrap lg:gap-0 gap-8 lg:justify-evenly justify-center">
           {stats.map((item, index) => {
-            // const IconComp = item.icon;
             return (
               <motion.div
                 key={index}
@@ -58,21 +52,20 @@ export default function StatsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 rounded-2xl bg-white dark:bg-blue-950/70 border border-blue-100 dark:border-blue-900/60 shadow-sm hover:shadow-md transition-all group"
+                className="lg:max-w-1/5 lg:w-1/6 md:w-1/3 w-[40%] p-6 border-t-[1.5px] border-blue-900 dark:border-blue-100 group flex flex-col items-center"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-orange-500/10 dark:bg-orange-500/20 flex items-center justify-center text-orange-500 group-hover:scale-110 transition-transform">
-                    {/* <IconComp className="w-5 h-5 stroke-[2.2]" /> */}
+                  <div className="flex items-center justify-center w-10 h-10 text-blue-900 transition-transform rounded-xl bg-blue-500/10 dark:bg-blue-500/20 dark:text-blue-50 group-hover:scale-110">
                     <HugeiconsIcon icon={item.icon} size={20} />
                   </div>
-                  <span className="font-jakarta-sans text-3xl sm:text-4xl font-extrabold text-blue-950 dark:text-white">
+                  <span className="text-3xl font-extrabold font-jakarta-sans sm:text-4xl text-blue-950 dark:text-white">
                     {item.value}
                   </span>
                 </div>
-                <h4 className="font-jakarta-sans text-sm font-bold text-blue-950 dark:text-white mb-1">
+                <h4 className="mb-1 text-sm font-bold text-center font-jakarta-sans text-blue-950 dark:text-white">
                   {item.label}
                 </h4>
-                <p className="font-inter text-xs text-blue-900/60 dark:text-blue-200/60">
+                <p className="text-xs text-center font-inter text-blue-900/60 dark:text-blue-200/60">
                   {item.desc}
                 </p>
               </motion.div>

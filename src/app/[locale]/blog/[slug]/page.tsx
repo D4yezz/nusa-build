@@ -6,6 +6,7 @@ import { blogsData } from "@/data/blogs";
 import ArticleDetail from "@/components/sections/ArticleDetail";
 import Navbar from "@/components/layout/Navbar/navbar";
 import Footer from "@/components/layout/Footer/footer";
+import FloatingWhatsApp from "@/components/common/FloatingWhatsApp";
 
 interface ArticleDetailPageProps {
   params: Promise<{
@@ -76,6 +77,7 @@ export default async function ArticleDetailPage({
         }}
       />
       <Footer />
+      <FloatingWhatsApp />
     </article>
   );
 }

@@ -59,7 +59,7 @@ export default function ArticleDetail({
   };
 
   return (
-    <section className="max-w-6xl py-24 mx-auto bg-white dark:bg-dark-blue">
+    <section className="lg:max-w-6xl py-24 mx-auto bg-background max-w-[90%]">
       <div className="relative mb-6 overflow-hidden h-96 rounded-2xl bg-blue-950">
         <Image
           fill
