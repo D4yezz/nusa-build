@@ -92,6 +92,7 @@ export default function PortfolioSection() {
                     src={project.image}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover w-full h-full transition-transform duration-700 transform group-hover:scale-105"
                   />
                   <div className="absolute inset-0 transition-opacity bg-linear-to-t from-blue-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-80" />

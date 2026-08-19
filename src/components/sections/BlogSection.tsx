@@ -43,6 +43,7 @@ export default function BlogSection() {
                 <div className="relative overflow-hidden h-52 bg-blue-950">
                   <Image
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     src={post.image}
                     alt={post.title[locale]}
                     className="object-cover w-full h-full transition-transform duration-700 transform group-hover:scale-105"

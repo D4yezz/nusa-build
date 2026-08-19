@@ -29,10 +29,13 @@
     "partnersTitle": "MITRA & KLIEN TERPERCAYA KAMI"
   },
   "Stats": {
-    "years": "Tahun Pengalaman",
-    "projects": "Proyek Selesai",
-    "onTime": "Tepat Waktu",
-    "satisfaction": "Kepuasan Klien"
+    "years": { "text": "Tahun Pengalaman", "desc": "Track record sejak 2010" },
+    "projects": { "text": "Proyek Selesai", "desc": "Skala nasional & daerah" },
+    "onTime": { "text": "Tepat Waktu", "desc": "Manajemen tenggat ketat" },
+    "satisfaction": {
+      "text": "Kepuasan Klien",
+      "desc": "Rekomendasi klien positif"
+    }
   },
   "Features": {
     "tag": "KEUNGGULAN KAMI",
@@ -175,6 +178,11 @@
     "quickLinks": "Navigasi Cepat",
     "servicesTitle": "Layanan Kami",
     "contactInfo": "Info Kontak",
-    "rights": "Hak Cipta Dilindungi Undang-Undang."
+    "rights": "Hak Cipta Dilindungi Undang-Undang.",
+    "commercial": "Konstruksi Komersial",
+    "architecture": "Arsitektur & Interior",
+    "renovation": "Renovasi Bangunan",
+    "management": "Manajemen Proyek",
+    "consult": "Konsultasi Struktur"
   }
 }

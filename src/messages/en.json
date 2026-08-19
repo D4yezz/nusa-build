@@ -29,10 +29,16 @@
     "partnersTitle": "OUR TRUSTED CLIENTS & PARTNERS"
   },
   "Stats": {
-    "years": "Years Experience",
-    "projects": "Completed Projects",
-    "onTime": "On-Time Rate",
-    "satisfaction": "Client Satisfaction"
+    "years": { "text": "Years Experience", "desc": "Track record since 2010" },
+    "projects": {
+      "text": "Completed Projects",
+      "desc": "National and regional levels"
+    },
+    "onTime": { "text": "On-Time Rate", "desc": "Managing tight deadlines" },
+    "satisfaction": {
+      "text": "Client Satisfaction",
+      "desc": "Positive client recommendations"
+    }
   },
   "Features": {
     "tag": "OUR ADVANTAGES",
@@ -165,6 +171,7 @@
   "WhatsApp": {
     "tooltip": "Chat with Our Consultant Team",
     "onlineText": "Typically replies in a few minutes",
+    "heading": "Free Consultation with NusaBuild",
     "greeting": "Hello NusaBuild Studio, I am interested in consulting regarding a construction / architectural project.",
     "chatBtn": "Start WhatsApp Chat"
   },
@@ -174,6 +181,11 @@
     "quickLinks": "Quick Links",
     "servicesTitle": "Our Services",
     "contactInfo": "Contact Info",
-    "rights": "All Rights Reserved."
+    "rights": "All Rights Reserved.",
+    "commercial": "Commercial Construction",
+    "architecture": "Architecture & Interior Design",
+    "renovation": "Building Renovation",
+    "management": "Project Management",
+    "consult": "Structural Consulting"
   }
 }

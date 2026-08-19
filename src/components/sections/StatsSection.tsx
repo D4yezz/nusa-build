@@ -16,27 +16,27 @@ export default function StatsSection() {
   const stats = [
     {
       value: "15+",
-      label: t("years"),
+      label: t("years.text"),
       icon: CalendarAnalysisIcon,
-      desc: "Track record sejak 2010",
+      desc: t("years.desc"),
     },
     {
       value: "250+",
-      label: t("projects"),
+      label: t("projects.text"),
       icon: CheckmarkCircle03Icon,
-      desc: "Skala nasional & daerah",
+      desc: t("projects.desc"),
     },
     {
       value: "100%",
-      label: t("onTime"),
+      label: t("onTime.text"),
       icon: CalendarClockIcon,
-      desc: "Manajemen tenggat ketat",
+      desc: t("onTime.desc"),
     },
     {
       value: "99%",
-      label: t("satisfaction"),
+      label: t("satisfaction.text"),
       icon: ThumbsUpIcon,
-      desc: "Rekomendasi klien positif",
+      desc: t("satisfaction.desc"),
     },
   ];
 
