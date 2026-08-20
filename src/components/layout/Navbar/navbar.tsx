@@ -81,9 +81,14 @@ export default function Navbar() {
 
           <nav className="hidden lg:flex items-center gap-1 bg-blue-50/70 dark:bg-blue-950/40 p-1.5 rounded-full border border-blue-100/80 dark:border-blue-900/50 backdrop-blur-sm">
             {navLinks.map((link) => {
+              // const isActive =
+              //   pathname === link.href ||
+              //   (link.href !== "/" && pathname === link.href.replace("/", ""));
               const isActive =
-                pathname === link.href ||
-                (link.href !== "/" && pathname === link.href.replace("/", ""));
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname === link.href ||
+                    pathname.startsWith(`${link.href}/`);
               return (
                 <Link
                   key={link.href}

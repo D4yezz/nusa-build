@@ -78,6 +78,7 @@ export default function ArticleDetail({
               fill
               src={article.authorAvatar}
               alt={article.author}
+              sizes="200px"
               className="object-cover"
             />
           </div>
@@ -102,7 +103,7 @@ export default function ArticleDetail({
         </div>
       </div>
 
-      <h1 className="mt-12 mb-8 text-6xl font-extrabold text-balance font-jakarta-sans text-blue-950 dark:text-white">
+      <h1 className="mt-12 mb-8 md:text-6xl text-3xl font-extrabold text-balance font-jakarta-sans text-blue-950 dark:text-white">
         {title}
       </h1>
       <div className="max-w-5xl mb-8 text-lg leading-relaxed whitespace-pre-line font-inter text-blue-900/80 dark:text-blue-200/80">

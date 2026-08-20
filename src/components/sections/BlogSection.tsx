@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { blogsData } from "@/data/blogs";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export default function BlogSection() {
   const t = useTranslations("Blog");
@@ -77,7 +77,7 @@ export default function BlogSection() {
 
               <div className="px-6 pt-0 pb-6">
                 <Link
-                  href={`/${locale}/blog/${post.slug}`}
+                  href={`/blog/${post.slug}`}
                   className="flex items-center justify-center w-full gap-2 py-3 text-xs font-bold tracking-wider uppercase transition-all duration-300 rounded-2xl bg-blue-50 dark:bg-blue-900/40 hover:bg-orange-500 hover:text-white text-blue-950 dark:text-white font-jakarta-sans"
                 >
                   <span>{t("readArticle")}</span>

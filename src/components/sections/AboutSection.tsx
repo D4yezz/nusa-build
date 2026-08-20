@@ -14,9 +14,11 @@ import {
   MoneySecurityIcon,
   Route01Icon,
 } from "@hugeicons/core-free-icons";
+import { usePathname } from "@/i18n/navigation";
 
 export default function AboutSection() {
   const t = useTranslations("About");
+  const pathname = usePathname();
 
   const values = [
     { title: t("val1"), desc: t("val1Desc"), icon: MoneySecurityIcon },
@@ -28,7 +30,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative py-20 overflow-hidden lg:py-28 bg-blue-50/40 dark:bg-blue-950/20"
+      className="relative py-20 overflow-hidden lg:py-28 bg-blue-50/40 dark:bg-background"
     >
       <div className="px-5 mx-auto sm:px-18 lg:px-22">
         <div className="grid items-center grid-cols-1 gap-12 mb-20 lg:grid-cols-12 lg:gap-16">
@@ -46,6 +48,7 @@ export default function AboutSection() {
                 className="object-cover"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={pathname === "/about" ? true : false}
               />
               <div className="absolute inset-0 bg-linear-to-t from-blue-950/60 via-transparent to-transparent" />
             </div>
